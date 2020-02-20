@@ -6,7 +6,7 @@ import Dashboard from './components/views/Dashboard/Dashboard';
 import Login from './components/views/Login/Login';
 import Kitchen from './components/views/Kitchen/Kitchen';
 import Tables from './components/views/Tables/Tables';
-import TablesBookingId from './components/views/TablesBookingId/TablesBookingId';
+import TablesBookingEdit from './components/views/TablesBookingEdit/TablesBookingEdit';
 import TablesBookingNew from './components/views/TablesBookingNew/TablesBookingNew';
 import TablesEventsId from './components/views/TablesEventsId/TablesEventsId';
 import TablesEventsNew from './components/views/TablesEventsNew/TablesEventsNew';
@@ -51,7 +51,7 @@ function App() {
               />
               <Route
                 exact path={`${process.env.PUBLIC_URL}/tables/booking/:id`}
-                component={TablesBookingId}
+                component={TablesBookingEdit}
               />
               <Route
                 exact path={`${process.env.PUBLIC_URL}/tables/booking/new`}
