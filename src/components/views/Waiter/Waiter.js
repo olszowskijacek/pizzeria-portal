@@ -7,6 +7,8 @@ import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 import Button from '@material-ui/core/Button';
+import Title from '../../common/Title/Title';
+import CssBaseline from '@material-ui/core/CssBaseline';
 
 const demoContent = [
   {id: '1', status: 'free', order: null},
@@ -52,40 +54,44 @@ const renderActions = status => {
 };
 
 const Waiter = () => (
-  <Paper className={styles.component}>
-    <Table>
-      <TableHead>
-        <TableRow>
-          <TableCell>Table</TableCell>
-          <TableCell>Status</TableCell>
-          <TableCell>Order</TableCell>
-          <TableCell>Action</TableCell>
-        </TableRow>
-      </TableHead>
-      <TableBody>
-        {demoContent.map(row => (
-          <TableRow key={row.id}>
-            <TableCell component="th" scope="row">
-              {row.id}
-            </TableCell>
-            <TableCell>
-              {row.status}
-            </TableCell>
-            <TableCell>
-              {row.order && (
-                <Button to={`${process.env.PUBLIC_URL}/waiter/order/${row.order}`}>
-                  {row.order}
-                </Button>
-              )}
-            </TableCell>
-            <TableCell>
-              {renderActions(row.status)}
-            </TableCell>
+  <div className={styles.component}>
+    <CssBaseline />
+    <Title>Waiter</Title>
+    <Paper className={styles.component}>
+      <Table>
+        <TableHead>
+          <TableRow>
+            <TableCell>Table</TableCell>
+            <TableCell>Status</TableCell>
+            <TableCell>Order</TableCell>
+            <TableCell>Action</TableCell>
           </TableRow>
-        ))}
-      </TableBody>
-    </Table>
-  </Paper>
+        </TableHead>
+        <TableBody>
+          {demoContent.map(row => (
+            <TableRow key={row.id}>
+              <TableCell component="th" scope="row">
+                {row.id}
+              </TableCell>
+              <TableCell>
+                {row.status}
+              </TableCell>
+              <TableCell>
+                {row.order && (
+                  <Button to={`${process.env.PUBLIC_URL}/waiter/order/${row.order}`}>
+                    {row.order}
+                  </Button>
+                )}
+              </TableCell>
+              <TableCell>
+                {renderActions(row.status)}
+              </TableCell>
+            </TableRow>
+          ))}
+        </TableBody>
+      </Table>
+    </Paper>
+  </div>
 );
 
 export default Waiter;

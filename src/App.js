@@ -8,7 +8,7 @@ import Kitchen from './components/views/Kitchen/Kitchen';
 import Tables from './components/views/Tables/Tables';
 import TablesBookingEdit from './components/views/TablesBookingEdit/TablesBookingEdit';
 import TablesBookingNew from './components/views/TablesBookingNew/TablesBookingNew';
-import TablesEventsId from './components/views/TablesEventsId/TablesEventsId';
+import TablesEventsEdit from './components/views/TablesEventsEdit/TablesEventsEdit';
 import TablesEventsNew from './components/views/TablesEventsNew/TablesEventsNew';
 import Waiter from './components/views/Waiter/Waiter';
 import WaiterOrderId from './components/views/WaiterOrderId/WaiterOrderId';
@@ -59,7 +59,7 @@ function App() {
               />
               <Route
                 exact path={`${process.env.PUBLIC_URL}/tables/events/:id`}
-                component={TablesEventsId}
+                component={TablesEventsEdit}
               />
               <Route
                 exact path={`${process.env.PUBLIC_URL}/tables/events/new`}

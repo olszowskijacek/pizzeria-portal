@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './TablesEventsNew.module.scss';
+import styles from './TablesEventsEdit.module.scss';
 import Subtitle from '../../common/Subtitle/Subtitle';
 import Title from '../../common/Title/Title';
 import Paper from '@material-ui/core/Paper';
@@ -10,34 +10,27 @@ import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Button from '@material-ui/core/Button';
 import CssBaseline from '@material-ui/core/CssBaseline';
-import DPicker from '../../features/DateTimePicker/DatePicker';
-import TPicker from '../../features/DateTimePicker/TimePicker';
-import BasicTextField from '../../features/Form/TextField';
-import BasicNumberField from '../../features/Form/NumberField';
 
-function createData(info, details) {
-  return { info, details };
+function createData(details, products) {
+  return { details, products };
 }
 
 const rows = [
-  createData('Date:', <DPicker />),
-  createData('Name:', <BasicTextField />),
-  createData('Ship To:', <BasicTextField />),
-  createData('Table No.:', <BasicNumberField />),
-  createData('Hour:', <TPicker />),
-  createData('People:', <BasicNumberField />),
+  createData('Table No.', 1),
+  createData('Date', '12.12.2019'),
+  createData('Time', '19:00-20:30'),
+  createData('People', 3),
 ];
-
-const TablesEventNew = () => (
+const TablesEventsId = () => (
   <div className={styles.component}>
     <CssBaseline />
-    <Title>Tables New Event</Title>
+    <Title>Tables Edit Event</Title>
     <Paper className={styles.component}>
       <Table className={styles.table} size='small'>
         <TableHead>
           <TableRow>
             <TableCell align='left'>
-              <Subtitle>Event no. ___</Subtitle>
+              <Subtitle>Event no. 12</Subtitle>
             </TableCell>
             <TableCell />
             <TableCell />
@@ -45,10 +38,10 @@ const TablesEventNew = () => (
         </TableHead>
         <TableBody>
           {rows.map(row => (
-            <TableRow key={row.details}>
-              <TableCell align='left'>{row.info}</TableCell>
+            <TableRow key={row.products}>
+              <TableCell align='left'>{row.details}</TableCell>
               <TableCell component='th' scope='row'>
-                {row.details}
+                {row.products}
               </TableCell>
               <TableCell align='right'>
                 <Button
@@ -56,7 +49,7 @@ const TablesEventNew = () => (
                   color='primary'
                   variant='outlined'
                 >
-                  Add
+                  Edit
                 </Button>
               </TableCell>
             </TableRow>
@@ -68,5 +61,4 @@ const TablesEventNew = () => (
   </div>
 );
 
-
-export default TablesEventNew;
+export default TablesEventsId;
