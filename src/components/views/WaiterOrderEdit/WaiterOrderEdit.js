@@ -1,5 +1,6 @@
 import React from 'react';
-import styles from './WaiterOrderNew.module.scss';
+import styles from './WaiterOrderEdit.module.scss';
+
 import Subtitle from '../../common/Subtitle/Subtitle';
 import Title from '../../common/Title/Title';
 import Paper from '@material-ui/core/Paper';
@@ -16,24 +17,23 @@ function createData(details, products) {
 }
 
 const rows = [
-  createData('Table No.', null),
-  createData('Menu Products', null),
-  createData('Options', null),
-  createData('Subtotal', null),
-  createData('Total Price', null),
+  createData('Table No.', 1),
+  createData('Menu Products', 'pizza tonno, cola, ice-cream, chips'),
+  createData('Options', 'additional cheese, black olives, no onion'),
+  createData('Subtotal', 305, 3.7, 67, 4.3),
+  createData('Total Price', 356, 16.0, 49, 3.9),
 ];
 
-
-const WaiterOrderNew = () => (
+const WaiterOrderEdit = () => (
   <div className={styles.component}>
     <CssBaseline />
-    <Title>Waiter New Order</Title>
+    <Title>Waiter Edit Order</Title>
     <Paper className={styles.component}>
       <Table className={styles.table} size='small'>
         <TableHead>
           <TableRow>
             <TableCell align='left'>
-              <Subtitle>Order no. ___</Subtitle>
+              <Subtitle>Order no. 320</Subtitle>
             </TableCell>
             <TableCell />
             <TableCell />
@@ -52,7 +52,7 @@ const WaiterOrderNew = () => (
                   color='primary'
                   variant='outlined'
                 >
-                  Add
+                  Edit
                 </Button>
               </TableCell>
             </TableRow>
@@ -63,6 +63,4 @@ const WaiterOrderNew = () => (
   </div>
 );
 
-
-
-export default WaiterOrderNew;
+export default WaiterOrderEdit;

@@ -11,7 +11,7 @@ import TablesBookingNew from './components/views/TablesBookingNew/TablesBookingN
 import TablesEventsEdit from './components/views/TablesEventsEdit/TablesEventsEdit';
 import TablesEventsNew from './components/views/TablesEventsNew/TablesEventsNew';
 import Waiter from './components/views/Waiter/Waiter';
-import WaiterOrderId from './components/views/WaiterOrderId/WaiterOrderId';
+import WaiterOrderEdit from './components/views/WaiterOrderEdit/WaiterOrderEdit';
 import WaiterOrderNew from './components/views/WaiterOrderNew/WaiterOrderNew';
 
 import { StylesProvider } from '@material-ui/core/styles';
@@ -71,7 +71,7 @@ function App() {
               />
               <Route
                 exact path={`${process.env.PUBLIC_URL}/waiter/order/:id`}
-                component={WaiterOrderId}
+                component={WaiterOrderEdit}
               />
               <Route
                 exact path={`${process.env.PUBLIC_URL}/waiter/order/new`}
