@@ -7,9 +7,11 @@ const server = jsonServer.create();
 const router = jsonServer.router('build/db/app.json');
 const middlewares = jsonServer.defaults({
   static: 'build',
-  noCors: true
+  noCors: true,
 });
 const port = process.env.PORT || 3131;
+
+const cors = require('cors');
 
 server.get(/^\/panel.*/, (req,res) =>{
   if(req.url === '/panel'){
@@ -22,6 +24,9 @@ server.get(/^\/panel.*/, (req,res) =>{
     res.sendFile(path.join(__dirname+'/build/index.html'));
   }
 });
+server.use(cors());
+server.use(middlewares);
+server.use(router);
 
 server.use(function(req, res, next) {
   const api = /^\/api(.*)$/.exec(req.url);
@@ -34,7 +39,6 @@ server.use(function(req, res, next) {
   next();
 });
 
-server.use(middlewares);
-server.use(router);
+
 
 server.listen(port);

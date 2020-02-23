@@ -27,7 +27,7 @@ const rows = [
   createData('12:00', null, null, null, null, null, null),
   createData('12:30', null, null, null, null, null, null),
   createData('13:00', null, null, null, null, null, null),
-  createData('13:00', null, null, null, null, null, null),
+  createData('13:30', null, null, null, null, null, null),
   createData(
     '14:00',
     'Michael Jackson',
